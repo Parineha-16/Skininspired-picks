@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skincare Info Form 💖</title>
+  <style>
+  body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background:
+    linear-gradient(to right, rgba(255, 214, 232, 0.7), rgba(255, 234, 246, 0.7)),
+    url('bg.jpg.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.form-container {
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      width: 320px;
+      text-align: center;
+      border: 2px dashed #ff69b4;
+    }
+
+    .form-container h2 {
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #ffc0cb;
+      border-radius: 10px;
+      background-color: #fff9fb;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #4f80ff; /* Blue color */
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #3666b2; /* Darker blue on hover */
+    }
+
+    #message {
+      margin-top: 15px;
+      color: #cc0077;
+      font-weight: bold;
+    }
+
+    .stickers {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="stickers">🧴💖✨🛁🌸</div>
+    <h2>Please enter your details</h2>
+    <form id="userForm" autocomplete="on">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" autocomplete="name" style="text-transform: capitalize;" required aria-required="true">
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required aria-required="true">
+
+      <button type="submit" aria-label="Submit Form">Next</button>
+    </form>
+    <div id="message" role="status" aria-live="polite"></div>
+  </div>
+
+  <script>
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const dobRaw = document.getElementById('dob').value;
+
+      if (!name || !dobRaw) return;
+
+      // Save user info to localStorage
+      localStorage.setItem('userName', name);
+      localStorage.setItem('userDob', dobRaw);
+
+      // Redirect to gender page
+      window.location.href = 'gender.html';
+    });
+  </script>
+
+</body>
+</html>
