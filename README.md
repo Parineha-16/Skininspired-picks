@@ -19,3 +19,6 @@ This document defines the software's requirements, system
 behavior, and implementation scope. It is intended for
 developers, testers, designers, and stakeholders to ensure
 smooth development and delivery
+
+![Screenshot 2025-06-01 171941](https://github.com/user-attachments/assets/751f822e-ffa6-4360-a320-8a19566a13ce)
+
